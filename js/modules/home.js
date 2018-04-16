@@ -53,37 +53,30 @@ var home = {
   },
 
   map: function() {
-
-    //exibir mapa
-    var map = {
-      zoom: 8,
-      scrollwheel: false,
-      center: new google.maps.LatLng(-8.057585,-36.746032),
-      panControl: false
-    },
-
-    t = new google.maps.Map(document.getElementById("mapa"), map);
-
-    //funcao selecao filiais
-    $(".location .address__box").each(function(e, n) {
-      var r = $(n).data("latitude"),
-          i = $(n).data("longitude"),
-          s = new google.maps.LatLng(r, i),
-          l = new google.maps.Marker({
-            position: s,
-            map: t,
-            animation: google.maps.Animation.DROP
-          });
-      }), 
-
-    $(document).on("click", ".location .address__box", function(e) {
+    $('.imbiribeira').click(function(e) {
       e.preventDefault();
-      var n = $(this).data("latitude"),
-          r = $(this).data("longitude");
-      t.panTo(new google.maps.LatLng(n, r)), t.setZoom(18), $(".location .address__box").removeClass("active"), $(this).addClass("active")
-    });
 
-    }
+      $('#imbiribeira').css('display', 'block');
+      $('#boaviagem').css('display', 'none');
+      $('#jaboatao').css('display', 'none');
+    });    
+
+    $('.jaboatao').click(function(e) {
+      e.preventDefault();
+
+      $('#jaboatao').css('display', 'block');
+      $('#boaviagem').css('display', 'none');
+      $('#imbiribeira').css('display', 'none');
+    });    
+
+    $('.boaviagem').click(function(e) {
+      e.preventDefault();
+
+      $('#boaviagem').css('display', 'block');    
+      $('#jaboatao').css('display', 'none');
+      $('#imbiribeira').css('display', 'none');
+    });
+  }
 }
 
 home.init();

@@ -1049,7 +1049,7 @@ body .text {
 .header__logo {
   display: inline-block;
   width: 225px;
-  height: 56px;
+  height: 53px;
   margin: 36px 0px;
   background: url(../images/misc/logo.png) 0 0 no-repeat;
   background-size: 100%;
@@ -1450,6 +1450,12 @@ body .text {
 }
 .location .address__box.active .title {
   color: #0c4da2;
+}
+.location #boaviagem {
+  display: none;
+}
+.location #jaboatao {
+  display: none;
 }
 @media only screen and (min-width: 1200px) {
   .featured__form .btn:hover {
